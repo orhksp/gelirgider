@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gelir-Gider Sonuçları</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Sonuçlar</h1>
+        <h2>Gelirler</h2>
+        <ul>
+            {% for name, value in incomes %}
+                <li>{{ name }}: {{ value }}₺</li>
+            {% endfor %}
+        </ul>
+        <h2>Giderler</h2>
+        <ul>
+            {% for name, value in expenses %}
+                <li>{{ name }}: {{ value }}₺</li>
+            {% endfor %}
+        </ul>
+        <p><strong>Toplam Gelir:</strong> {{ total_income }}₺</p>
+        <p><strong>Toplam Gider:</strong> {{ total_expenses }}₺</p>
+        <p><strong>Kalan Miktar:</strong> {{ savings }}₺</p>
+        <img src="/static/budget_chart.png" alt="Gelir-Gider Grafiği">
+    </div>
+</body>
+</html>
